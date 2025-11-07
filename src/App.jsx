@@ -1,28 +1,35 @@
-import { useState } from 'react'
+import React from 'react';
+import Hero from './components/Hero';
+import Features from './components/Features';
+import Pricing from './components/Pricing';
+import Footer from './components/Footer';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
+    <div className="min-h-screen bg-white text-slate-900">
+      <header className="sticky top-0 z-20 bg-white/80 backdrop-blur border-b border-slate-200">
+        <div className="mx-auto max-w-7xl px-6 h-16 flex items-center justify-between">
+          <a href="#home" className="font-extrabold tracking-tight text-xl">Clean Grip</a>
+          <nav className="hidden sm:flex items-center gap-6 text-sm text-slate-600">
+            <a className="hover:text-slate-900" href="#features">Features</a>
+            <a className="hover:text-slate-900" href="#pricing">Pricing</a>
+            <a className="hover:text-slate-900" href="#contact">Contact</a>
+          </nav>
+          <a href="#pricing" className="ml-4 inline-flex items-center justify-center rounded-lg bg-slate-900 px-4 py-2 text-white text-sm font-medium shadow-sm hover:bg-slate-800 transition">
+            Shop now
+          </a>
         </div>
-      </div>
+      </header>
+
+      <main>
+        <Hero />
+        <Features />
+        <Pricing />
+      </main>
+
+      <Footer />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
